@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "70a80ca6-7f8a-457f-9a32-652c640e104b",
+		"name": "learn",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29422388"
+	},
+	"item": [
+		{
+			"name": "students",
+			"item": [
+				{
+					"name": "students_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/students/all",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"students",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hostname}}/students/student_1",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"students",
+								"student_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"msg\" : \"Hello\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostname}}/students/",
+							"host": [
+								"{{hostname}}"
+							],
+							"path": [
+								"students",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "flask_home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}",
+					"host": [
+						"{{hostname}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hw",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/hw",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"hw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "greet_user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/hello/dhiraj",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"hello",
+						"dhiraj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "greet_user_age",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/hello/dhiraj/33/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"hello",
+						"dhiraj",
+						"33",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user admin/guest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/user/dhiraj",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"user",
+						"dhiraj"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
