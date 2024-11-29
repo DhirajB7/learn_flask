@@ -62,7 +62,7 @@ def edit_student(student_id):
     else:
         return f'{student_id} not found'
 
-@app.route('/students/delete/<student_id>',methods=['DELETE'])
+@app.route('/students/delete/<student_id>/',methods=['DELETE'])
 def delete_student(student_id):
     if student_id in students :
         students.pop(student_id)
@@ -71,7 +71,7 @@ def delete_student(student_id):
         return f'{student_id} not found'
 
 
-@app.route('/students/<student_id>',methods=['GET','POST','PUT','DELETE'])
+@app.route('/students/<student_id>/',methods=['GET','POST','PUT','DELETE'])
 def many_method(student_id):
     if request.method=='GET':
         return redirect(url_for('get_by_id',student_id=student_id))
