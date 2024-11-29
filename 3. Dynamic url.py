@@ -8,7 +8,7 @@ def hello_admin():
 
 # to be used in url_for
 @app.route('/guest/<name>')
-def hello_guest(name):
+def hello_guest(name): 
    return f'Hello {name}'
 
 @app.route('/user/<name>/')

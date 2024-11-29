@@ -1,5 +1,6 @@
 import json
-from flask import Flask,request
+from flask import Flask, request, redirect, url_for
+
 app = Flask(__name__)
 
 # Define the students dictionary
@@ -38,7 +39,7 @@ students = {
 def get_all():
    return students
 
-@app.route('/students/<student_id>/')
+@app.route('/students/get/<student_id>/')
 def get_by_id(student_id):
     if student_id in students :
         return students.get(student_id)
@@ -53,13 +54,35 @@ def add_student(student_id):
     else:
         return f'{student_id} already present'
 
-@app.route('/students/<student_id>',methods=['DELETE'])
+@app.route('/students/edit/<student_id>/',methods=['PUT'])
 def edit_student(student_id):
+    if student_id  in students :
+        students[student_id] = request.json
+        return request.json
+    else:
+        return f'{student_id} not found'
+
+@app.route('/students/delete/<student_id>',methods=['DELETE'])
+def delete_student(student_id):
     if student_id in students :
         students.pop(student_id)
         return f'{student_id} removed.'
     else :
         return f'{student_id} not found'
+
+
+@app.route('/students/<student_id>',methods=['GET','POST','PUT','DELETE'])
+def many_method(student_id):
+    if request.method=='GET':
+        return redirect(url_for('get_by_id',student_id=student_id))
+    elif request.method=='POST':
+        return redirect(url_for('add_student', student_id=student_id))
+    elif request.method=='PUT':
+        return redirect(url_for('edit_student', student_id=student_id))
+    elif request.method=='DELETE':
+        return redirect(url_for('delete_student', student_id=student_id))
+    else :
+        return f'{request.method} is not found'
 
 
 

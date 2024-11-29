@@ -1,13 +1,13 @@
 {
 	"info": {
-		"_postman_id": "70a80ca6-7f8a-457f-9a32-652c640e104b",
-		"name": "learn",
+		"_postman_id": "7de69c51-2f87-409e-909f-d90de2c94264",
+		"name": "Learn Flask",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29422388"
+		"_exporter_id": "14394619"
 	},
 	"item": [
 		{
-			"name": "students",
+			"name": "students crud",
 			"item": [
 				{
 					"name": "students_all",
@@ -72,7 +72,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "HTTP Meathods learning"
 		},
 		{
 			"name": "flask_home",
